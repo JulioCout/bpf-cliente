@@ -1,9 +1,8 @@
-import { FaqSection } from "@marketing/home/components/FaqSection";
-import { Features } from "@marketing/home/components/Features";
-import { Hero } from "@marketing/home/components/Hero";
-import { Newsletter } from "@marketing/home/components/Newsletter";
-import { PricingSection } from "@marketing/home/components/PricingSection";
+import { FeaturesBpf } from "@marketing/home/components/FeaturesBpf";
+import { ContactBpf } from "@marketing/home/components/ContactBpf";
+import { HeroBpf } from "@marketing/home/components/HeroBpf";
 import { setRequestLocale } from "next-intl/server";
+import { ServicosBpf } from "@marketing/home/components/ServicosBpf";
 
 export default async function Home({
 	params,
@@ -15,11 +14,10 @@ export default async function Home({
 
 	return (
 		<>
-			<Hero />
-			<Features />
-			<PricingSection />
-			<FaqSection />
-			<Newsletter />
+			<HeroBpf />
+			<ServicosBpf />
+			<FeaturesBpf />
+			<ContactBpf />
 		</>
 	);
 }

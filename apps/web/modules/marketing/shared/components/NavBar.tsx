@@ -60,32 +60,20 @@ export function NavBar() {
 		href: string;
 	}[] = [
 		{
-			label: t("common.menu.pricing"),
-			href: "/#pricing",
+			label: "Início",
+			href: "/#inicio",
 		},
 		{
-			label: t("common.menu.faq"),
-			href: "/#faq",
+			label: "Serviços",
+			href: "/#servicos",
 		},
 		{
-			label: t("common.menu.blog"),
-			href: "/blog",
+			label: "Vantagens",
+			href: "/#vantagens",
 		},
 		{
-			label: t("common.menu.changelog"),
-			href: "/changelog",
-		},
-		...(config.contactForm.enabled
-			? [
-					{
-						label: t("common.menu.contact"),
-						href: "/contact",
-					},
-				]
-			: []),
-		{
-			label: t("common.menu.docs"),
-			href: "/docs",
+			label: "Peça seu Orçamento",
+			href: "/#contato",
 		},
 	];
 
@@ -136,7 +124,7 @@ export function NavBar() {
 					</div>
 
 					<div className="flex flex-1 items-center justify-end gap-3">
-						<ColorModeToggle />
+						{/* <ColorModeToggle /> */}
 						{config.i18n.enabled && (
 							<Suspense>
 								<LocaleSwitch />

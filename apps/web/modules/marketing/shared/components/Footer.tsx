@@ -9,35 +9,35 @@ export function Footer() {
 				<div>
 					<Logo className="opacity-70 grayscale" />
 					<p className="mt-3 text-sm opacity-70">
-						© {new Date().getFullYear()} {config.appName}.{" "}
-						<a href="https://supastarter.dev">
-							Built with supastarter
+						© 2025. {" "}
+						<a href="https://www.datapraxi.com" target="_blank" rel="noreferrer" className="hover:text-foreground">
+							Desenvolvido por Data Praxi
 						</a>
 						.
 					</p>
 				</div>
 
 				<div className="flex flex-col gap-2">
-					<LocaleLink href="/blog" className="block">
-						Blog
+					<LocaleLink href="/#inicio" className="block">
+						Inicio
 					</LocaleLink>
 
-					<a href="#features" className="block">
-						Features
+					<a href="#servicos" className="block">
+						Serviços
 					</a>
 
-					<a href="/#pricing" className="block">
-						Pricing
+					<a href="/#vantagens" className="block">
+						Vantagens
 					</a>
 				</div>
 
 				<div className="flex flex-col gap-2">
 					<LocaleLink href="/legal/privacy-policy" className="block">
-						Privacy policy
+						Política de Privacidade
 					</LocaleLink>
 
 					<LocaleLink href="/legal/terms" className="block">
-						Terms and conditions
+						Termos e condições
 					</LocaleLink>
 				</div>
 			</div>
