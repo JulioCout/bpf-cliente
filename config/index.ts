@@ -1,11 +1,11 @@
 import type { Config } from "./types";
 
 export const config = {
-	appName: "supastarter for Next.js Demo",
+	appName: "Sistema de exemplo - Pedro",
 	// Internationalization
 	i18n: {
 		// Whether internationalization should be enabled (if disabled, you still need to define the locale you want to use below and set it as the default locale)
-		enabled: true,
+		enabled: false,
 		// Define all locales here that should be available in the app
 		// You need to define a label that is shown in the language selector and a currency that should be used for pricing with this locale
 		locales: {
@@ -17,24 +17,28 @@ export const config = {
 				currency: "USD",
 				label: "Deutsch",
 			},
+			br: {
+				currency: "BRL",
+				label: "Português",
+			},
 		},
 		// The default locale is used if no locale is provided
-		defaultLocale: "en",
+		defaultLocale: "br",
 		// The default currency is used for pricing if no currency is provided
-		defaultCurrency: "USD",
+		defaultCurrency: "BRL",
 		// The name of the cookie that is used to determine the locale
 		localeCookieName: "NEXT_LOCALE",
 	},
 	// Organizations
 	organizations: {
 		// Whether organizations are enabled in general
-		enable: true,
+		enable: false,
 		// Whether billing for organizations should be enabled (below you can enable it for users instead)
 		enableBilling: false,
 		// Whether the organization should be hidden from the user (use this for multi-tenant applications)
 		hideOrganization: false,
 		// Should users be able to create new organizations? Otherwise only admin users can create them
-		enableUsersToCreateOrganizations: true,
+		enableUsersToCreateOrganizations: false,
 		// Whether users should be required to be in an organization. This will redirect users to the organization page after sign in
 		requireOrganization: false,
 		// Define forbidden organization slugs. Make sure to add all paths that you define as a route after /app/... to avoid routing issues
@@ -49,24 +53,24 @@ export const config = {
 	// Users
 	users: {
 		// Whether billing should be enabled for users (above you can enable it for organizations instead)
-		enableBilling: true,
+		enableBilling: false,
 		// Whether you want the user to go through an onboarding form after signup (can be defined in the OnboardingForm.tsx)
-		enableOnboarding: true,
+		enableOnboarding: false,
 	},
 	// Authentication
 	auth: {
 		// Whether users should be able to create accounts (otherwise users can only be by admins)
-		enableSignup: true,
+		enableSignup: false,
 		// Whether users should be able to sign in with a magic link
-		enableMagicLink: true,
+		enableMagicLink: false,
 		// Whether users should be able to sign in with a social provider
-		enableSocialLogin: true,
+		enableSocialLogin: false,
 		// Whether users should be able to sign in with a passkey
-		enablePasskeys: true,
+		enablePasskeys: false,
 		// Whether users should be able to sign in with a password
 		enablePasswordLogin: true,
 		// Whether users should be activate two factor authentication
-		enableTwoFactor: true,
+		enableTwoFactor: false,
 		// where users should be redirected after the sign in
 		redirectAfterSignIn: "/app",
 		// where users should be redirected after logout
