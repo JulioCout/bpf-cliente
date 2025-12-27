@@ -9,6 +9,12 @@ import {
 	BotMessageSquareIcon,
 	ChevronRightIcon,
 	HomeIcon,
+	GavelIcon,
+	BookUserIcon,
+	FileIcon,
+	DollarSignIcon,
+	HandshakeIcon,
+	HeadsetIcon,
 	SettingsIcon,
 	UserCog2Icon,
 	UserCogIcon,
@@ -17,6 +23,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { OrganzationSelect } from "../../organizations/components/OrganizationSelect";
+import { includes } from "zod";
 
 export function NavBar() {
 	const t = useTranslations();
@@ -33,44 +40,80 @@ export function NavBar() {
 	const menuItems = [
 		{
 			label: t("app.menu.start"),
-			href: basePath,
+			href: "/app",
 			icon: HomeIcon,
-			isActive: pathname === basePath,
+			isActive: pathname === "/app",
 		},
 		{
-			label: t("app.menu.aiChatbot"),
-			href: activeOrganization
-				? `/app/${activeOrganization.slug}/chatbot`
-				: "/app/chatbot",
-			icon: BotMessageSquareIcon,
-			isActive: pathname.includes("/chatbot"),
+			label: "Processos",
+			href: "/app/processos",
+			icon: GavelIcon,
+			isActive: pathname.includes("/app/processos"),
 		},
-		...(activeOrganization && isOrganizationAdmin
-			? [
-					{
-						label: t("app.menu.organizationSettings"),
-						href: `${basePath}/settings`,
-						icon: SettingsIcon,
-						isActive: pathname.startsWith(`${basePath}/settings/`),
-					},
-				]
-			: []),
 		{
-			label: t("app.menu.accountSettings"),
-			href: "/app/settings",
-			icon: UserCog2Icon,
-			isActive: pathname.startsWith("/app/settings/"),
+			label: "Clientes",
+			href: "/app/clientes",
+			icon: BookUserIcon,
+			isActive: pathname.includes("/app/clientes"),
 		},
-		...(user?.role === "admin"
-			? [
-					{
-						label: t("app.menu.admin"),
-						href: "/app/admin",
-						icon: UserCogIcon,
-						isActive: pathname.startsWith("/app/admin/"),
-					},
-				]
-			: []),
+		{
+			label: "Documentos",
+			href: "/app/documentos",
+			icon: FileIcon,
+			isActive: pathname.includes("/app/documentos"),
+		},
+		{
+			label: "Financeiro",
+			href: "/app/financeiro",
+			icon: DollarSignIcon,
+			isActive: pathname.includes("/app/financeiro"),
+		},
+		{
+			label: "RH",
+			href: "/app/rh",
+			icon: HandshakeIcon,
+			isActive: pathname.includes("/app/rh"),
+		},
+		{
+			label: "Suporte",
+			href: "/app/suporte",
+			icon: HeadsetIcon,
+			isActive: pathname.includes("/app/suporte"),
+		},
+		// {
+		// 	label: t("app.menu.aiChatbot"),
+		// 	href: activeOrganization
+		// 		? `/app/${activeOrganization.slug}/chatbot`
+		// 		: "/app/chatbot",
+		// 	icon: BotMessageSquareIcon,
+		// 	isActive: pathname.includes("/chatbot"),
+		// },
+		// ...(activeOrganization && isOrganizationAdmin
+		// 	? [
+		// 			{
+		// 				label: t("app.menu.organizationSettings"),
+		// 				href: `${basePath}/settings`,
+		// 				icon: SettingsIcon,
+		// 				isActive: pathname.startsWith(`${basePath}/settings/`),
+		// 			},
+		// 		]
+		// 	: []),
+		// {
+		// 	label: t("app.menu.accountSettings"),
+		// 	href: "/app/settings",
+		// 	icon: UserCog2Icon,
+		// 	isActive: pathname.startsWith("/app/settings/"),
+		// },
+		// ...(user?.role === "admin"
+		// 	? [
+		// 			{
+		// 				label: t("app.menu.admin"),
+		// 				href: "/app/admin",
+		// 				icon: UserCogIcon,
+		// 				isActive: pathname.startsWith("/app/admin/"),
+		// 			},
+		// 		]
+		// 	: []),
 	];
 
 	return (
